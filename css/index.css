@@ -1,0 +1,169 @@
+﻿body{
+	margin: 0 0 0 0;
+	background: #333333;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", 微软雅黑, sans-serif;
+}
+
+#head{
+	width: 100%;
+	margin: 0px auto;
+	/*border: 1px solid #ddd;*/
+	margin-bottom: 10px;
+	min-width: 1050px;
+}
+
+#head_menu a{
+	background: #FFCC00;
+	margin: 10px 10px 10px 10px;
+	padding: 8px;
+	-webkit-border-radius:5px;
+	font-family:  黑体;
+	color: #333333;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#head img{
+	margin-top: 10px;
+	height: 45px;
+}
+
+#head_menu{
+	min-width: 250px;
+	margin: 20px 40px 10px 10px;
+	float: right;
+}
+
+ol{
+	list-style:none;
+}
+
+ol li h3{
+	font-family:"Arista2",helvetica,sans-serif;
+	color: #E05D04;
+	font-size: 18px;
+}
+
+p{
+	color:#fff;
+	margin: 15px 0px;
+	letter-spacing: 5px;
+	font-size: 14px;
+}
+
+p code {
+    background: #323232;
+    font-size: .8em;
+    padding: 4px;
+    margin-right: 5px;
+    color: #fff55c;
+    -webkit-border-radius:5px;
+    letter-spacing: 0px;
+}
+
+#img{
+	margin-top:20px;
+	margin-left: 20px;
+}
+
+#main{
+	border: 1px #ddd;
+	width: 100%;
+	float: left;
+
+	border: 1px solid #000;
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+
+#menu{
+	float: left;
+	width: 10%;
+	padding: 10 10 10 10;
+	min-width: 100px;
+	margin-left: 40px;
+	
+}
+
+
+#menu ul{
+	margin: 0 0 0 0;
+	padding:  0 0 0 0;
+}
+
+#menu ul li{
+	list-style-type:none;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#menu ul li a{
+	color: #FDA162;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 5 30 5 30;
+}
+
+#menu ul li a:hover{
+	color: #E05D04;
+	background: #252525;
+	-webkit-border-radius:5px;
+}
+
+.a_is_selected{
+	color: #E05D04;
+	background: #252525;
+	-webkit-border-radius:5px;
+	padding: 5 30 5 30;
+}
+
+#upload_panel{
+	float: right;
+	width: 78%;
+	min-width: 500px;
+	padding: 10 10 10 10;
+	margin-right: 80px;
+	background: #444444;
+	-webkit-border-radius:5px;
+	/*border: 1px solid #ddd;*/
+}
+
+#upload_panel ol{
+	padding-right: 40px;
+}
+
+.upload_file{
+	-webkit-border-radius: 5px;
+	background: #323232;
+	border: 0px;
+}
+
+.button{
+	background: #FFCC00;
+	margin: 10px;
+	padding: 4px;
+	-webkit-border-radius:5px;
+	font-family:黑体;
+	border:0px;
+}
+#msg{
+	color:red;
+}
+
+#img img{
+	border:1px solid #000;
+}
+#footer{
+	color: #C1C1C1;
+	float: left;
+	background: #222222;
+	width: 100%;
+	/*border: 1px solid #ddd;*/
+	line-height: 50px;
+}
+
+#footer a{
+	text-decoration: none;
+	color: #A5041D;
+}

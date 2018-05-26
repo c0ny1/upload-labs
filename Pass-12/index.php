@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
             <form enctype="multipart/form-data" method="post">
                 <p>请选择要上传的图片：<p>
                 <input type="hidden" name="save_path" value="../upload/"/>
-                <input class="upload_file" type="file" name="upload_file"/>
+                <input class="input_file" type="file" name="upload_file"/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>
             <div id="msg">

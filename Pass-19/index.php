@@ -1,31 +1,31 @@
 <?php
-setcookie("pass","17");
+setcookie("pass","19");
 include '../config.php';
 include '../head.php';
 include '../menu.php';
 
 $is_upload = false;
 $msg = null;
+if (isset($_POST['submit'])) {
+    if (file_exists($UPLOAD_ADDR)) {
+        $deny_ext = array("php","php5","php4","php3","php2","html","htm","phtml","pht","jsp","jspa","jspx","jsw","jsv","jspf","jtml","asp","aspx","asa","asax","ascx","ashx","asmx","cer","swf","htaccess");
 
-if(isset($_POST['submit'])){
-    $ext_arr = array('jpg','png','gif');
-    $file_name = $_FILES['upload_file']['name'];
-    $temp_file = $_FILES['upload_file']['tmp_name'];
-    $file_ext = substr($file_name,strrpos($file_name,".")+1);
-    $upload_file = $UPLOAD_ADDR . '/' . $file_name;
+        $file_name = $_POST['save_name'];
+        $file_ext = pathinfo($file_name,PATHINFO_EXTENSION);
 
-    if(move_uploaded_file($temp_file, $upload_file)){
-        if(in_array($file_ext,$ext_arr)){
-             $img_path = $UPLOAD_ADDR . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
-             rename($upload_file, $img_path);
-             unlink($upload_file);
-             $is_upload = true;
+        if(!in_array($file_ext,$deny_ext)) {
+            $img_path = $UPLOAD_ADDR . '/' .$file_name;
+            if (move_uploaded_file($_FILES['upload_file']['tmp_name'], $img_path)) { 
+                $is_upload = true;
+            }else{
+                $msg = '上传失败！';
+            }
         }else{
-            $msg = "只允许上传.jpg|.png|.gif类型文件！";
-            unlink($upload_file);
+            $msg = '禁止保存为该类型文件！';
         }
-    }else{
-        $msg = '上传失败！';
+
+    } else {
+        $msg = $UPLOAD_ADDR . '文件夹不存在,请手工创建！';
     }
 }
 ?>
@@ -41,6 +41,8 @@ if(isset($_POST['submit'])){
             <form enctype="multipart/form-data" method="post">
                 <p>请选择要上传的图片：<p>
                 <input class="input_file" type="file" name="upload_file"/>
+                <p>保存名称:<p>
+                <input class="input_text" type="text" name="save_name" style="" /><br/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>
             <div id="msg">

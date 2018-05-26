@@ -22,5 +22,6 @@ $style = 'class="a_is_selected"';
 		<li><a <?php if($passid == '16'){echo $style;}?> href="<?php echo $site_root;?>/Pass-16/index.php">Pass-16</a></li>
 		<li><a <?php if($passid == '17'){echo $style;}?> href="<?php echo $site_root;?>/Pass-17/index.php">Pass-17</a></li>
 		<li><a <?php if($passid == '18'){echo $style;}?> href="<?php echo $site_root;?>/Pass-18/index.php">Pass-18</a></li>
+		<li><a <?php if($passid == '19'){echo $style;}?> href="<?php echo $site_root;?>/Pass-19/index.php">Pass-19</a></li>
 	</ul>
 </div>

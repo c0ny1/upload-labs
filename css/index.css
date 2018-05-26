@@ -126,14 +126,21 @@ p code {
 	margin-right: 80px;
 	background: #444444;
 	-webkit-border-radius:5px;
-	/*border: 1px solid #ddd;*/
 }
 
 #upload_panel ol{
 	padding-right: 40px;
 }
 
-.upload_file{
+.input_file{
+	-webkit-border-radius: 5px;
+	background: #323232;
+	border: 0px;
+}
+
+.input_text{
+	width: 240px;
+	height:22px;
 	-webkit-border-radius: 5px;
 	background: #323232;
 	border: 0px;
@@ -159,7 +166,6 @@ p code {
 	float: left;
 	background: #222222;
 	width: 100%;
-	/*border: 1px solid #ddd;*/
 	line-height: 50px;
 }
 

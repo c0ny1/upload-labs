@@ -32,5 +32,5 @@ include 'upload-labs/menu.php';
 
 
 <?php
-include 'footer.php'
+include 'upload-labs/footer.php'
 ?>

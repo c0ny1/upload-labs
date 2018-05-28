@@ -10,23 +10,23 @@ window.onresize = function(){
 }
 
 function clean_upload_file(){
-	$.ajax({  
-		type: 'get',  
-		url: "<?php echo $site_root;?>/rmdir.php?action=clean_upload_file",	
+	$.ajax({
+		type: 'get',
+		url: "/upload-labs/rmdir.php?action=clean_upload_file",
 	}).success(function(data) {
 		alert(data);
-	}).error(function() {  
-		alert("删除失败！");  
-	}); 
+	}).error(function() {
+		alert("删除失败！");
+	});
 }
 
  function get_prompt(){
-	$.ajax({  
-		type: 'get',  
-		url: "helper.php?action=get_prompt", 
-	}).success(function(data) {  
-		alert(data);  
-	}).error(function() {  
-		alert("获取提示失败！");  
-	}); 	
+	$.ajax({
+		type: 'get',
+		url: "helper.php?action=get_prompt",
+	}).success(function(data) {
+		alert(data);
+	}).error(function() {
+		alert("获取提示失败！");
+	});
  }

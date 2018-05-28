@@ -1,7 +1,7 @@
 <?php
-include 'config.php';
-include 'head.php';
-include 'menu.php';
+include 'upload-labs/config.php';
+include 'upload-labs/head.php';
+include 'upload-labs/menu.php';
 ?>
 <style type="text/css">
 #head_menu a{
@@ -13,7 +13,7 @@ include 'menu.php';
     <ol>
         <li>
             <h3>简介</h3>
-            <p><code>upload-labs</code>是一个使用<code>php</code>语言编写的，专门收集渗透测试过程中遇到的各种上传漏洞的靶场。旨在帮助大家对上传漏洞有一个全面的了解。目前一共19关，每一关都包含着不同上传方式。</p>
+            <p><code>/</code>是一个使用<code>php</code>语言编写的，专门收集渗透测试过程中遇到的各种上传漏洞的靶场。旨在帮助大家对上传漏洞有一个全面的了解。目前一共19关，每一关都包含着不同上传方式。</p>
         </li>
         <li>
             <h3>注意</h3>
@@ -32,5 +32,5 @@ include 'menu.php';
 
 
 <?php
-include 'footer.php'
+include 'upload-labs/footer.php'
 ?>

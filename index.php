@@ -1,7 +1,7 @@
 <?php
-include 'config.php';
-include 'head.php';
-include 'menu.php';
+include 'upload-labs/config.php';
+include 'upload-labs/head.php';
+include 'upload-labs/menu.php';
 ?>
 <style type="text/css">
 #head_menu a{

@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-	<link rel="icon" type="image/x-icon" href="<?php echo $site_root;?>/img/resizeApi.png" />  
+	<link rel="icon" type="image/x-icon" href="<?php echo $site_root;?>/img/resizeApi.png" />
 	<title>upload-labs</title>
 </head>
 <link rel="stylesheet" type="text/css" href="<?php echo $site_root;?>/css/index.css">
@@ -11,7 +11,7 @@ function show_code(){
 	var url = window.location.href;
 	if(url.indexOf("?") != -1){
 		url = url.split("?")[0];
-	}	
+	}
 
 	var e = document.getElementById("show_code");
 	if(e == null){
@@ -23,7 +23,7 @@ function show_code(){
 </script>
 <body>
 	<div id="head">
-		<a href="<?php echo $site_root;?>"><img src="<?php echo $site_root;?>/img/logo.png"/></a>
+		<a href="/"><img src="<?php echo $site_root;?>/img/logo.png"/></a>
 		<div id="head_menu">
 			<a href="javascript:show_code()">查看源码</a>
 			<a href="javascript:get_prompt()">查看提示</a>

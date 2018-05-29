@@ -173,3 +173,64 @@ p code {
 	text-decoration: none;
 	color: #A5041D;
 }
+
+.mask {
+	width:100%; 
+	height:100%; 
+	background:rgba(0,0,0,0.6); 
+	display:none; 
+	position:fixed; 
+	_position:absolute; 
+	top:0; left:0; 
+	z-index:99;
+}
+
+.dialog {
+	min-height:120px;
+	background:#393D48;
+	color:#fff;display:none;
+	position:fixed; top:20%;
+	left:50%; 
+	z-index:100; 
+	box-shadow:3px 3px 5px #000;
+	-webkit-border-radius: 5px;
+}
+
+.dialog-title {
+	background:#91440F;
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	-webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.dialog a.close { 
+	display:block; 
+	width:22px; 
+	height:22px; 
+	background:url(../img/close.png) center no-repeat #91440F; 
+	text-indent:-9999em;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.dialog a.close { 
+	position:absolute; top:0; 
+	right:0; 
+	z-index:101;
+}
+
+.dialog.loading { 
+	background:url(../img/loading.gif) center no-repeat #393D48;
+}
+
+.dialog-content {
+	line-height: 20px;
+	padding:22px 10px 10px 10px;
+	border-top: 1px solid #000;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	/*过长文本自动换行*/
+	word-break: break-all;
+	word-wrap: break-word;
+}

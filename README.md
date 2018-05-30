@@ -12,7 +12,7 @@ php组件：php_gd2,php_exif（部分Pass需要开启这两个组件）
 apache：以moudel方式连接
 ```
 
-PS：推荐使用phpstudy在windows下搭建靶机。
+PS：为了节省时间，可下载[Windows下集成环境](https://github.com/c0ny1/upload-labs/releases)，解压即可运行靶机环境。
 
 ## 使用
 

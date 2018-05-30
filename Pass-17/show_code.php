@@ -15,7 +15,6 @@ if(isset($_POST['submit'])){
         if(in_array($file_ext,$ext_arr)){
              $img_path = $UPLOAD_ADDR . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
              rename($upload_file, $img_path);
-             unlink($upload_file);
              $is_upload = true;
         }else{
             $msg = "只允许上传.jpg|.png|.gif类型文件！";

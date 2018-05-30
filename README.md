@@ -28,6 +28,9 @@ PS：推荐使用phpstudy在windows下搭建靶机。
 
 ![代码](doc/code.jpg)
 
+## 总结
+![判断上传漏洞类型](doc/sum_up.png)
+
 ## 致谢
 
 感谢[小小黄](https://github.com/xiaoxiaoki)做的logo

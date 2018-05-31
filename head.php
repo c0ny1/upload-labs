@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-	<link rel="icon" type="image/x-icon" href="<?php echo $site_root;?>/img/resizeApi.png" />  
+	<link rel="icon" type="image/x-icon" href="<?php echo $site_root;?>/img/favicon.png" />  
 	<title>upload-labs</title>
 </head>
 <link rel="stylesheet" type="text/css" href="<?php echo $site_root;?>/css/index.css">

@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                 <p>请选择要上传的图片：<p>
                 <input class="input_file" type="file" name="upload_file"/>
                 <p>保存名称:<p>
-                <input class="input_text" type="text" name="save_name" style="" /><br/>
+                <input class="input_text" type="text" name="save_name" value="upload-19.jpg" /><br/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>
             <div id="msg">

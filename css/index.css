@@ -7,7 +7,6 @@
 #head{
 	width: 100%;
 	margin: 0px auto;
-	/*border: 1px solid #ddd;*/
 	margin-bottom: 10px;
 	min-width: 1050px;
 }
@@ -71,7 +70,6 @@ p code {
 	border: 1px #ddd;
 	width: 100%;
 	float: left;
-
 	border: 1px solid #000;
 	padding-top: 20px;
 	padding-bottom: 20px;	
@@ -85,7 +83,6 @@ p code {
 	margin-left: 40px;
 	
 }
-
 
 #menu ul{
 	margin: 0 0 0 0;
@@ -139,11 +136,14 @@ p code {
 }
 
 .input_text{
+	padding: 5px;
 	width: 240px;
-	height:22px;
-	-webkit-border-radius: 5px;
-	background: #323232;
+	height: 22px;
+	line-height: 22px;
 	border: 0px;
+	-webkit-border-radius: 5px;
+	color: #888888;
+	background: #323232;
 }
 
 .button{

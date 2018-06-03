@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     <ol>
         <li>
             <h3>任务</h3>
-            <p>拿到一个<code>shell</code>。</p>
+            <p>上传一个<code>webshell</code>到服务器。</p>
         </li>
         <li>
             <h3>上传区</h3>

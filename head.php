@@ -6,21 +6,6 @@
 </head>
 <link rel="stylesheet" type="text/css" href="<?php echo $site_root;?>/css/index.css">
 <link rel="stylesheet" type="text/css" href="<?php echo $site_root;?>/css/prism.css">
-<script>
-function show_code(){
-	var url = window.location.href;
-	if(url.indexOf("?") != -1){
-		url = url.split("?")[0];
-	}	
-
-	var e = document.getElementById("show_code");
-	if(e == null){
-		window.location.href=url+"?action=show_code";
-	}else{
-		window.location.href=url;
-	}
-}
-</script>
 <body>
 	<div id="head">
 		<a href="<?php echo $site_root;?>"><img src="<?php echo $site_root;?>/img/logo.png"/></a>

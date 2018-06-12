@@ -1,5 +1,4 @@
 <?php
-setcookie("pass","03");
 include '../config.php';
 include '../common.php';
 include '../head.php';

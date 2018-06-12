@@ -1,12 +1,8 @@
 <?php
-setcookie("pass","01");
 include '../config.php';
 include '../head.php';
 include '../menu.php';
-?>
 
-
-<?php
 $is_upload = false;
 $msg = null;
 if (isset($_POST['submit'])) {

@@ -1,5 +1,12 @@
-﻿body{
+﻿/**
+* author: c0ny1
+* date: 2018-6-13
+* project: https://github.com/c0ny1/upload-labs
+*/
+
+body{
 	margin: 0 0 0 0;
+	min-width: 1340px;/*防止窗口变小导致页面变形*/
 	background: #333333;
 	font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", 微软雅黑, sans-serif;
 }

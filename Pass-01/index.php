@@ -6,13 +6,13 @@ include '../menu.php';
 $is_upload = false;
 $msg = null;
 if (isset($_POST['submit'])) {
-    if (file_exists($UPLOAD_ADDR)) {
-        if (move_uploaded_file($_FILES['upload_file']['tmp_name'], $UPLOAD_ADDR . '/' . $_FILES['upload_file']['name'])){
-            $img_path = $UPLOAD_ADDR . $_FILES['upload_file']['name'];
+    if (file_exists(UPLOAD_PATH)) {
+        if (move_uploaded_file($_FILES['upload_file']['tmp_name'], UPLOAD_PATH . '/' . $_FILES['upload_file']['name'])){
+            $img_path = UPLOAD_PATH . $_FILES['upload_file']['name'];
             $is_upload = true;
         }
     } else {
-        $msg = $UPLOAD_ADDR . '文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
     }
 }
 ?>

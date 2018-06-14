@@ -11,7 +11,7 @@ if (isset($_POST['submit'])){
     $filetype = $_FILES['upload_file']['type'];
     $tmpname = $_FILES['upload_file']['tmp_name'];
 
-    $target_path=$UPLOAD_ADDR.basename($filename);
+    $target_path=UPLOAD_PATH.basename($filename);
 
     // 获得上传文件的扩展名
     $fileext= substr(strrchr($filename,"."),1);
@@ -29,10 +29,10 @@ if (isset($_POST['submit'])){
                 //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".jpg";
-                $newimagepath = $UPLOAD_ADDR.$newfilename;
+                $newimagepath = UPLOAD_PATH.$newfilename;
                 imagejpeg($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = $UPLOAD_ADDR.$newfilename;
+                $img_path = UPLOAD_PATH.$newfilename;
                 unlink($target_path);
                 $is_upload = true;
             }
@@ -54,10 +54,10 @@ if (isset($_POST['submit'])){
                  //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".png";
-                $newimagepath = $UPLOAD_ADDR.$newfilename;
+                $newimagepath = UPLOAD_PATH.$newfilename;
                 imagepng($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = $UPLOAD_ADDR.$newfilename;
+                $img_path = UPLOAD_PATH.$newfilename;
                 unlink($target_path);
                 $is_upload = true;               
             }
@@ -78,10 +78,10 @@ if (isset($_POST['submit'])){
                 //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".gif";
-                $newimagepath = $UPLOAD_ADDR.$newfilename;
+                $newimagepath = UPLOAD_PATH.$newfilename;
                 imagegif($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = $UPLOAD_ADDR.$newfilename;
+                $img_path = UPLOAD_PATH.$newfilename;
                 unlink($target_path);
                 $is_upload = true;
             }

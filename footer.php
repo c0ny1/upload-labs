@@ -8,7 +8,7 @@
 		    <div class="dialog-content"></div>
 		</div>		
 </body>
-<script type="text/javascript" src="<?php echo $site_root;?>/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo $site_root;?>/js/prism.js"></script>
-<script type="text/javascript" src="<?php echo $site_root;?>/js/index.js"></script>
+<script type="text/javascript" src="<?php echo APP_URL_ROOT;?>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo APP_URL_ROOT;?>/js/prism.js"></script>
+<script type="text/javascript" src="<?php echo APP_URL_ROOT;?>/js/index.js"></script>
 </html>

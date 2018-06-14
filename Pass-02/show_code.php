@@ -4,10 +4,10 @@
 <code class="line-numbers language-php">$is_upload = false;
 $msg = null;
 if (isset($_POST['submit'])) {
-    if (file_exists($UPLOAD_ADDR)) {
+    if (file_exists(UPLOAD_PATH)) {
         if (($_FILES['upload_file']['type'] == 'image/jpeg') || ($_FILES['upload_file']['type'] == 'image/png') || ($_FILES['upload_file']['type'] == 'image/gif')) {
-            if (move_uploaded_file($_FILES['upload_file']['tmp_name'], $UPLOAD_ADDR . '/' . $_FILES['upload_file']['name'])) {
-                $img_path = $UPLOAD_ADDR . $_FILES['upload_file']['name'];
+            if (move_uploaded_file($_FILES['upload_file']['tmp_name'], UPLOAD_PATH . '/' . $_FILES['upload_file']['name'])) {
+                $img_path = UPLOAD_PATH . $_FILES['upload_file']['name'];
                 $is_upload = true;
 
             }
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
             $msg = '文件类型不正确，请重新上传！';
         }
     } else {
-        $msg = $UPLOAD_ADDR.'文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH.'文件夹不存在,请手工创建！';
     }
 }
 </code>

@@ -1,6 +1,6 @@
 <?php
 header("Content-type: text/html;charset=utf-8");
-//error_reporting(0);
+error_reporting(0);
 
 define("WWW_ROOT",$_SERVER['DOCUMENT_ROOT']);
 define("APP_ROOT",str_replace('\\','/',dirname(__FILE__)));

@@ -25,6 +25,7 @@ if (isset($_POST['submit'])){
 
             if($im == false){
                 $msg = "该文件不是jpg格式的图片！";
+                @unlink($target_path);
             }else{
                 //给新图片指定文件名
                 srand(time());
@@ -33,7 +34,7 @@ if (isset($_POST['submit'])){
                 imagejpeg($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
                 $img_path = UPLOAD_PATH.$newfilename;
-                unlink($target_path);
+                @unlink($target_path);
                 $is_upload = true;
             }
         }
@@ -50,6 +51,7 @@ if (isset($_POST['submit'])){
 
             if($im == false){
                 $msg = "该文件不是png格式的图片！";
+                @unlink($target_path);
             }else{
                  //给新图片指定文件名
                 srand(time());
@@ -58,7 +60,7 @@ if (isset($_POST['submit'])){
                 imagepng($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
                 $img_path = UPLOAD_PATH.$newfilename;
-                unlink($target_path);
+                @unlink($target_path);
                 $is_upload = true;               
             }
         }
@@ -74,6 +76,7 @@ if (isset($_POST['submit'])){
             $im = imagecreatefromgif($target_path);
             if($im == false){
                 $msg = "该文件不是gif格式的图片！";
+                @unlink($target_path);
             }else{
                 //给新图片指定文件名
                 srand(time());
@@ -82,7 +85,7 @@ if (isset($_POST['submit'])){
                 imagegif($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
                 $img_path = UPLOAD_PATH.$newfilename;
-                unlink($target_path);
+                @unlink($target_path);
                 $is_upload = true;
             }
         }

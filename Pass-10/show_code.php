@@ -5,7 +5,7 @@
 $msg = null;
 if (isset($_POST['submit'])) {
     if (file_exists(UPLOAD_PATH)) {
-        $deny_ext = array("php","php5","php4","php3","php2","html","htm","phtml","jsp","jspa","jspx","jsw","jsv","jspf","jtml","asp","aspx","asa","asax","ascx","ashx","asmx","cer","swf","htaccess");
+        $deny_ext = array("php","php5","php4","php3","php2","html","htm","phtml","pht","jsp","jspa","jspx","jsw","jsv","jspf","jtml","asp","aspx","asa","asax","ascx","ashx","asmx","cer","swf","htaccess");
 
         $file_name = trim($_FILES['upload_file']['name']);
         $file_name = str_ireplace($deny_ext,"", $file_name);

@@ -13,8 +13,9 @@ if (isset($_POST['submit'])) {
         $file_ext = str_ireplace('::$DATA', '', $file_ext);//去除字符串::$DATA
         
         if (!in_array($file_ext, $deny_ext)) {
-            if (move_uploaded_file($_FILES['upload_file']['tmp_name'], UPLOAD_PATH . '/' . $_FILES['upload_file']['name'])) {
-                $img_path = UPLOAD_PATH . '/' . $file_name;
+            $temp_file = $_FILES['upload_file']['tmp_name'];
+            $img_path = UPLOAD_PATH.'/'.date("YmdHis").rand(1000,9999).$file_ext;
+            if (move_uploaded_file($temp_file,$img_path)) {
                 $is_upload = true;
             }
         } else {

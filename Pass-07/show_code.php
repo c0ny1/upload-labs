@@ -13,12 +13,13 @@ if (isset($_POST['submit'])) {
         $file_ext = trim($file_ext); //首尾去空
         
         if (!in_array($file_ext, $deny_ext)) {
-            if (move_uploaded_file($_FILES['upload_file']['tmp_name'], UPLOAD_PATH . '/' . $_FILES['upload_file']['name'])) {
-                $img_path = UPLOAD_PATH . '/' . $file_name;
+            $temp_file = $_FILES['upload_file']['tmp_name'];
+            $img_path = UPLOAD_PATH.'/'.$file_name;
+            if (move_uploaded_file($temp_file, $img_path)) {
                 $is_upload = true;
             }
         } else {
-            $msg = '此文件不允许上传';
+            $msg = '此文件类型不允许上传！';
         }
     } else {
         $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';

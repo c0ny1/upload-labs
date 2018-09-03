@@ -37,10 +37,8 @@ if (isset($_POST['submit'])){
                 @unlink($target_path);
                 $is_upload = true;
             }
-        }
-        else
-        {
-            $msg = "上传失败！";
+        } else {
+            $msg = "上传出错！";
         }
 
     }else if(($fileext == "png") && ($filetype=="image/png")){
@@ -63,10 +61,8 @@ if (isset($_POST['submit'])){
                 @unlink($target_path);
                 $is_upload = true;               
             }
-        }
-        else
-        {
-            $msg = "上传失败！";
+        } else {
+            $msg = "上传出错！";
         }
 
     }else if(($fileext == "gif") && ($filetype=="image/gif")){
@@ -88,10 +84,8 @@ if (isset($_POST['submit'])){
                 @unlink($target_path);
                 $is_upload = true;
             }
-        }
-        else
-        {
-            $msg = "上传失败！";
+        } else {
+            $msg = "上传出错！";
         }
     }else{
         $msg = "只允许上传后缀为.jpg|.png|.gif的图片文件！";

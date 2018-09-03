@@ -13,6 +13,8 @@ if (isset($_POST['submit'])) {
         $img_path = UPLOAD_PATH.'/'.$file_name;        
         if (move_uploaded_file($temp_file, $img_path)) {
             $is_upload = true;
+        } else {
+            $msg = '上传出错！';
         }
     } else {
         $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';

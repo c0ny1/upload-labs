@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
             unlink($upload_file);
         }
     }else{
-        $msg = '上传失败！';
+        $msg = '上传出错！';
     }
 }
 ?>

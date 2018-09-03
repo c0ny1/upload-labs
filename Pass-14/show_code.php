@@ -27,9 +27,8 @@ if(isset($_POST['submit'])){
         $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").$res;
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
-        }
-        else{
-            $msg = "上传失败";
+        } else {
+            $msg = "上传出错！";
         }
     }
 }

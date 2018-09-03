@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
             if (move_uploaded_file($temp_file, $img_path)) { 
                 $is_upload = true;
             }else{
-                $msg = '上传失败！';
+                $msg = '上传出错！';
             }
         }else{
             $msg = '禁止保存为该类型文件！';

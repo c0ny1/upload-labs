@@ -17,6 +17,8 @@ if (isset($_POST['submit'])) {
             $img_path = UPLOAD_PATH.'/'.$file_name;
             if (move_uploaded_file($temp_file, $img_path)) {
                 $is_upload = true;
+            } else {
+                $msg = '上传出错！';
             }
         } else {
             $msg = '此文件类型不允许上传！';

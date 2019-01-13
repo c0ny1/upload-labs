@@ -136,6 +136,16 @@ p code {
 	padding-right: 40px;
 }
 
+#upload_panel a{
+	text-decoration: none;
+	padding: 0px 0px 1px 0px;
+	color: #fff55c;
+}
+
+#upload_panel a:hover {
+	border-bottom:2px solid #FDA162;
+}
+
 .input_file{
 	-webkit-border-radius: 5px;
 	background: #323232;

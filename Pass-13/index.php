@@ -52,7 +52,8 @@ if(isset($_POST['submit'])){
             <p>上传<code>图片马</code>到服务器。</p>
             <p>注意：</p>
             <p>1.保证上传后的图片马中仍然包含完整的<code>一句话</code>或<code>webshell</code>代码。</p>
-            <p>2.图片马要<code>.jpg</code>,<code>.png</code>,<code>.gif</code>三种后缀都上传成功才算过关！</p>
+            <p>2.使用<a href="<?php echo INC_VUL_PATH;?>" target="_bank">文件包含漏洞</a>能运行图片马中的恶意代码。</p>
+            <p>3.图片马要<code>.jpg</code>,<code>.png</code>,<code>.gif</code>三种后缀都上传成功才算过关！</p>
         </li>
         <li>
             <h3>上传区</h3>

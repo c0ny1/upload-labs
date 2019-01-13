@@ -50,6 +50,13 @@ function clean_upload_file(){
 	}); 
 }
 
+function update_copyright_time(){
+	var mydate = new Date();
+	var now_time = '2018 ~ ' + mydate.getFullYear();
+	var copyright_time = document.getElementById("copyright_time");
+	copyright_time.innerHTML = now_time;
+}
+
 function setFooter(){
 	var min_height = window.innerHeight - 175;
 	var obj = document.getElementById("main");
@@ -76,7 +83,10 @@ var Dialog = {
 }
 
 $(function(){
+	//修改显示源码按钮名称
 	modify_showcode_name();
+	//更新版权时间
+	update_copyright_time();
 	//设置footer用于在底部
 	setFooter();
 	window.onresize = function(){

@@ -1,6 +1,6 @@
 </div>
 		<div id="footer">
-			<center>Copyright&nbsp;@&nbsp;2018&nbsp;by&nbsp;<a href="http://gv7.me">c0ny1</a></center>
+			<center>Copyright&nbsp;@&nbsp;2018&nbsp;by&nbsp;<a href="http://gv7.me" target="_bank">c0ny1</a></center>
 		</div>
 		<div class="mask"></div>
 		<div class="dialog">

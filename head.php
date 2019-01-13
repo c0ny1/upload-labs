@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo APP_URL_ROOT;?>/css/prism.css">
 <body>
 	<div id="head">
-		<a href="<?php echo APP_URL_ROOT;?>"><img src="<?php echo APP_URL_ROOT;?>/img/logo.png"/></a>
+		<a href="<?php echo APP_URL_ROOT;?>/"><img src="<?php echo APP_URL_ROOT;?>/img/logo.png"/></a>
 		<div id="head_menu">
 			<a href="javascript:show_code()">查看源码</a>
 			<a href="javascript:get_prompt()">查看提示</a>

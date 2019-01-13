@@ -9,12 +9,22 @@ function show_code(){
 	if(url.indexOf("?") != -1){
 		url = url.split("?")[0];
 	}	
-
+	
 	var e = document.getElementById("show_code");
 	if(e == null){
 		window.location.href=url+"?action=show_code";
 	}else{
 		window.location.href=url;
+	}
+}
+
+function modify_showcode_name(){
+	var url = window.location.href;
+	var btn_showcode = document.getElementById("handle_code");
+	if(url.indexOf('show_code') >= 0){
+		btn_showcode.innerHTML = "隐藏源码";
+	}else{
+		btn_showcode.innerHTML = "显示源码";
 	}
 }
 
@@ -66,6 +76,7 @@ var Dialog = {
 }
 
 $(function(){
+	modify_showcode_name();
 	//设置footer用于在底部
 	setFooter();
 	window.onresize = function(){

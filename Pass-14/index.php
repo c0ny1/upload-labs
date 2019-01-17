@@ -8,7 +8,7 @@ function isImage($filename){
     if(file_exists($filename)){
         $info = getimagesize($filename);
         $ext = image_type_to_extension($info[2]);
-        if(stripos($types,$ext)){
+        if(stripos($types,$ext)>=0){
             return $ext;
         }else{
             return false;

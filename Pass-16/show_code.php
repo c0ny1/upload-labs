@@ -9,15 +9,14 @@ if (isset($_POST['submit'])){
     $filetype = $_FILES['upload_file']['type'];
     $tmpname = $_FILES['upload_file']['tmp_name'];
 
-    $target_path=UPLOAD_PATH.basename($filename);
+    $target_path=UPLOAD_PATH.'/'.basename($filename);
 
     // 获得上传文件的扩展名
     $fileext= substr(strrchr($filename,"."),1);
 
     //判断文件后缀与类型，合法才进行上传操作
     if(($fileext == "jpg") && ($filetype=="image/jpeg")){
-        if(move_uploaded_file($tmpname,$target_path))
-        {
+        if(move_uploaded_file($tmpname,$target_path)){
             //使用上传的图片生成新的图片
             $im = imagecreatefromjpeg($target_path);
 
@@ -28,10 +27,9 @@ if (isset($_POST['submit'])){
                 //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".jpg";
-                $newimagepath = UPLOAD_PATH.$newfilename;
-                imagejpeg($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = UPLOAD_PATH.$newfilename;
+                $img_path = UPLOAD_PATH.'/'.$newfilename;
+                imagejpeg($im,$img_path);
                 @unlink($target_path);
                 $is_upload = true;
             }
@@ -40,8 +38,7 @@ if (isset($_POST['submit'])){
         }
 
     }else if(($fileext == "png") && ($filetype=="image/png")){
-        if(move_uploaded_file($tmpname,$target_path))
-        {
+        if(move_uploaded_file($tmpname,$target_path)){
             //使用上传的图片生成新的图片
             $im = imagecreatefrompng($target_path);
 
@@ -52,10 +49,10 @@ if (isset($_POST['submit'])){
                  //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".png";
-                $newimagepath = UPLOAD_PATH.$newfilename;
-                imagepng($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = UPLOAD_PATH.$newfilename;
+                $img_path = UPLOAD_PATH.'/'.$newfilename;
+                imagepng($im,$img_path);
+
                 @unlink($target_path);
                 $is_upload = true;               
             }
@@ -64,8 +61,7 @@ if (isset($_POST['submit'])){
         }
 
     }else if(($fileext == "gif") && ($filetype=="image/gif")){
-        if(move_uploaded_file($tmpname,$target_path))
-        {
+        if(move_uploaded_file($tmpname,$target_path)){
             //使用上传的图片生成新的图片
             $im = imagecreatefromgif($target_path);
             if($im == false){
@@ -75,10 +71,10 @@ if (isset($_POST['submit'])){
                 //给新图片指定文件名
                 srand(time());
                 $newfilename = strval(rand()).".gif";
-                $newimagepath = UPLOAD_PATH.$newfilename;
-                imagegif($im,$newimagepath);
                 //显示二次渲染后的图片（使用用户上传图片生成的新图片）
-                $img_path = UPLOAD_PATH.$newfilename;
+                $img_path = UPLOAD_PATH.'/'.$newfilename;
+                imagegif($im,$img_path);
+
                 @unlink($target_path);
                 $is_upload = true;
             }

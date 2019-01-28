@@ -1,7 +1,16 @@
-# upload-labs:一个想帮你总结所有类型的上传漏洞的靶场
+<p align="center">
+  <img title="portainer" src='img/logo.png' />
+</p>
 
-[![version](https://img.shields.io/badge/version-0.1-brightgreen.svg)](https://github.com/c0ny1/upload-labs) 
-[![PHP 5.*](https://img.shields.io/badge/php-5.*-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)]() 
+<p align="center">
+  <img title="portainer" src='https://img.shields.io/badge/version-0.1-brightgreen.svg' />
+  <img title="portainer" src='https://img.shields.io/badge/php-5.*-yellow.svg' />
+  <img title="portainer" src='https://img.shields.io/badge/license-MIT-red.svg' />
+</p>
+
+---
+
+**upload-labs是一个使用php语言编写的，专门收集渗透测试和CTF中遇到的各种上传漏洞的靶场。旨在帮助大家对上传漏洞有一个全面的了解。目前一共20关，每一关都包含着不同上传方式。**
 
 ## 0x01 Screenshot
 

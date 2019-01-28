@@ -33,7 +33,7 @@
 若要自己亲自搭建环境，请按照以下配置环境，方可正常运行每个Pass。
 
 |配置项|配置|描述|
-|:---:|:---:|:---:|
+|:---|:---|:---|
 |操作系统|Window or Linux|推荐使用Windows，除了Pass-19必须在linux下，其余Pass都可以在Windows上运行|
 |PHP版本|推荐5.2.17|其他版本可能会导致部分Pass无法突破|
 |PHP组件|php_gd2,php_exif|部分Pass依赖这两个组件|
@@ -50,6 +50,13 @@
 #### 2.3 Linux快速搭建
 
 创建镜像
+
+```
+$ cd upload-labs/docker
+$ docker build -t upload-labs .
+```
+
+或
 
 ```
 $ docker pull c0ny1/upload-labs

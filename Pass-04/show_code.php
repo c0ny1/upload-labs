@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
         if (!in_array($file_ext, $deny_ext)) {
             $temp_file = $_FILES['upload_file']['tmp_name'];
-            $img_path = UPLOAD_PATH.'/'.date("YmdHis").rand(1000,9999).$file_ext;
+            $img_path = UPLOAD_PATH.'/'.$file_name;
             if (move_uploaded_file($temp_file, $img_path)) {
                 $is_upload = true;
             } else {

@@ -41,7 +41,7 @@
 
 #### 2.2 Windows快速搭建
 
-项目提供了一个Windows下,按照以上配置要求配置好的集成环环境
+项目提供了一个Windows下,按照以上配置要求配置好的集成环境
 
 下载地址：https://github.com/c0ny1/upload-labs/releases
 

@@ -30,8 +30,16 @@ function del_dir($dir){
 	}
 }
 
+function touch_upload_readme(){
+	$filepath = './upload/readme.php';
+	file_put_contents($filepath,"<?php echo \"该目录是上传文件保存，该文件为系统说明文件，请勿删除！\";?>");
+}
+
 if($_GET['action'] == 'clean_upload_file'){
 	echo del_dir("upload");
+	//重新创建upload目录和readme.php文件
+	sleep(0.5);
 	mkdir("upload");
+	touch_upload_readme();
 }
 ?>

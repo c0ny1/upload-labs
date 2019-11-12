@@ -1,44 +1,22 @@
 <li id="show_code">
     <h3>代码</h3>
 <pre>
-<code class="line-numbers language-php">function getReailFileType($filename){
-    $file = fopen($filename, "rb");
-    $bin = fread($file, 2); //只读2字节
-    fclose($file);
-    $strInfo = @unpack("C2chars", $bin);    
-    $typeCode = intval($strInfo['chars1'].$strInfo['chars2']);    
-    $fileType = '';    
-    switch($typeCode){      
-        case 255216:            
-            $fileType = 'jpg';
-            break;
-        case 13780:            
-            $fileType = 'png';
-            break;        
-        case 7173:            
-            $fileType = 'gif';
-            break;
-        default:            
-            $fileType = 'unknown';
-        }    
-        return $fileType;
-}
-
-$is_upload = false;
+<code class="line-numbers language-php">$is_upload = false;
 $msg = null;
 if(isset($_POST['submit'])){
-    $temp_file = $_FILES['upload_file']['tmp_name'];
-    $file_type = getReailFileType($temp_file);
+    $ext_arr = array('jpg','png','gif');
+    $file_ext = substr($_FILES['upload_file']['name'],strrpos($_FILES['upload_file']['name'],".")+1);
+    if(in_array($file_ext,$ext_arr)){
+        $temp_file = $_FILES['upload_file']['tmp_name'];
+        $img_path = $_POST['save_path']."/".rand(10, 99).date("YmdHis").".".$file_ext;
 
-    if($file_type == 'unknown'){
-        $msg = "文件未知，上传失败！";
-    }else{
-        $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").".".$file_type;
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = "上传出错！";
+            $msg = "上传失败";
         }
+    } else {
+        $msg = "只允许上传.jpg|.png|.gif类型文件！";
     }
 }
 </code>

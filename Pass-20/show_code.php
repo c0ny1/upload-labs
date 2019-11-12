@@ -3,36 +3,28 @@
 <pre>
 <code class="line-numbers language-php">$is_upload = false;
 $msg = null;
-if(!empty($_FILES['upload_file'])){
-    //检查MIME
-    $allow_type = array('image/jpeg','image/png','image/gif');
-    if(!in_array($_FILES['upload_file']['type'],$allow_type)){
-        $msg = "禁止上传该类型文件!";
-    }else{
-        //检查文件名
-        $file = empty($_POST['save_name']) ? $_FILES['upload_file']['name'] : $_POST['save_name'];
-        if (!is_array($file)) {
-            $file = explode('.', strtolower($file));
-        }
+if (isset($_POST['submit'])) {
+    if (file_exists(UPLOAD_PATH)) {
+        $deny_ext = array("php","php5","php4","php3","php2","html","htm","phtml","pht","jsp","jspa","jspx","jsw","jsv","jspf","jtml","asp","aspx","asa","asax","ascx","ashx","asmx","cer","swf","htaccess");
 
-        $ext = end($file);
-        $allow_suffix = array('jpg','png','gif');
-        if (!in_array($ext, $allow_suffix)) {
-            $msg = "禁止上传该后缀文件!";
-        }else{
-            $file_name = reset($file) . '.' . $file[count($file) - 1];
+        $file_name = $_POST['save_name'];
+        $file_ext = pathinfo($file_name,PATHINFO_EXTENSION);
+
+        if(!in_array($file_ext,$deny_ext)) {
             $temp_file = $_FILES['upload_file']['tmp_name'];
             $img_path = UPLOAD_PATH . '/' .$file_name;
-            if (move_uploaded_file($temp_file, $img_path)) {
-                $msg = "文件上传成功！";
+            if (move_uploaded_file($temp_file, $img_path)) { 
                 $is_upload = true;
-            } else {
-                $msg = "文件上传失败！";
+            }else{
+                $msg = '上传出错！';
             }
+        }else{
+            $msg = '禁止保存为该类型文件！';
         }
+
+    } else {
+        $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
     }
-}else{
-    $msg = "请选择要上传的文件！";
 }
 </code>
 </pre>

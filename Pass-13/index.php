@@ -3,44 +3,22 @@ include '../config.php';
 include '../head.php';
 include '../menu.php';
 
-function getReailFileType($filename){
-    $file = fopen($filename, "rb");
-    $bin = fread($file, 2); //只读2字节
-    fclose($file);
-    $strInfo = @unpack("C2chars", $bin);    
-    $typeCode = intval($strInfo['chars1'].$strInfo['chars2']);    
-    $fileType = '';    
-    switch($typeCode){      
-        case 255216:            
-            $fileType = 'jpg';
-            break;
-        case 13780:            
-            $fileType = 'png';
-            break;        
-        case 7173:            
-            $fileType = 'gif';
-            break;
-        default:            
-            $fileType = 'unknown';
-        }    
-        return $fileType;
-}
-
 $is_upload = false;
 $msg = null;
 if(isset($_POST['submit'])){
-    $temp_file = $_FILES['upload_file']['tmp_name'];
-    $file_type = getReailFileType($temp_file);
+    $ext_arr = array('jpg','png','gif');
+    $file_ext = substr($_FILES['upload_file']['name'],strrpos($_FILES['upload_file']['name'],".")+1);
+    if(in_array($file_ext,$ext_arr)){
+        $temp_file = $_FILES['upload_file']['tmp_name'];
+        $img_path = $_POST['save_path']."/".rand(10, 99).date("YmdHis").".".$file_ext;
 
-    if($file_type == 'unknown'){
-        $msg = "文件未知，上传失败！";
-    }else{
-        $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").".".$file_type;
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = "上传出错！";
+            $msg = "上传失败";
         }
+    } else {
+        $msg = "只允许上传.jpg|.png|.gif类型文件！";
     }
 }
 ?>
@@ -49,16 +27,13 @@ if(isset($_POST['submit'])){
     <ol>
         <li>
             <h3>任务</h3>
-            <p>上传<code>图片马</code>到服务器。</p>
-            <p>注意：</p>
-            <p>1.保证上传后的图片马中仍然包含完整的<code>一句话</code>或<code>webshell</code>代码。</p>
-            <p>2.使用<a href="<?php echo INC_VUL_PATH;?>" target="_bank">文件包含漏洞</a>能运行图片马中的恶意代码。</p>
-            <p>3.图片马要<code>.jpg</code>,<code>.png</code>,<code>.gif</code>三种后缀都上传成功才算过关！</p>
+            <p>上传一个<code>webshell</code>到服务器。</p>
         </li>
         <li>
             <h3>上传区</h3>
             <form enctype="multipart/form-data" method="post">
                 <p>请选择要上传的图片：<p>
+                <input type="hidden" name="save_path" value="../upload/"/>
                 <input class="input_file" type="file" name="upload_file"/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>

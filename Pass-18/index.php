@@ -5,41 +5,25 @@ include '../menu.php';
 
 $is_upload = false;
 $msg = null;
-if (isset($_POST['submit']))
-{
-    require_once("./myupload.php");
-    $imgFileName =time();
-    $u = new MyUpload($_FILES['upload_file']['name'], $_FILES['upload_file']['tmp_name'], $_FILES['upload_file']['size'],$imgFileName);
-    $status_code = $u->upload(UPLOAD_PATH);
-    switch ($status_code) {
-        case 1:
-            $is_upload = true;
-            $img_path = $u->cls_upload_dir . $u->cls_file_rename_to;
-            break;
-        case 2:
-            $msg = '文件已经被上传，但没有重命名。';
-            break; 
-        case -1:
-            $msg = '这个文件不能上传到服务器的临时文件存储目录。';
-            break; 
-        case -2:
-            $msg = '上传失败，上传目录不可写。';
-            break; 
-        case -3:
-            $msg = '上传失败，无法上传该类型文件。';
-            break; 
-        case -4:
-            $msg = '上传失败，上传的文件过大。';
-            break; 
-        case -5:
-            $msg = '上传失败，服务器已经存在相同名称文件。';
-            break; 
-        case -6:
-            $msg = '文件无法上传，文件不能复制到目标目录。';
-            break;      
-        default:
-            $msg = '未知错误！';
-            break;
+
+if(isset($_POST['submit'])){
+    $ext_arr = array('jpg','png','gif');
+    $file_name = $_FILES['upload_file']['name'];
+    $temp_file = $_FILES['upload_file']['tmp_name'];
+    $file_ext = substr($file_name,strrpos($file_name,".")+1);
+    $upload_file = UPLOAD_PATH . '/' . $file_name;
+
+    if(move_uploaded_file($temp_file, $upload_file)){
+        if(in_array($file_ext,$ext_arr)){
+             $img_path = UPLOAD_PATH . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
+             rename($upload_file, $img_path);
+             $is_upload = true;
+        }else{
+            $msg = "只允许上传.jpg|.png|.gif类型文件！";
+            unlink($upload_file);
+        }
+    }else{
+        $msg = '上传出错！';
     }
 }
 ?>

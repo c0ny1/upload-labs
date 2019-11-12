@@ -1,5 +1,5 @@
 <?php
 if($_GET['action'] == 'get_prompt'){
-    echo 'Pass-20来源于CTF，请审计代码！';
+    echo '本pass的取文件名通过$_POST来获取。';
 }
 ?>

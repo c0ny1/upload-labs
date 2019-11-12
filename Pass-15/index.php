@@ -4,21 +4,17 @@ include '../head.php';
 include '../menu.php';
 
 function isImage($filename){
-    //需要开启php_exif模块
-    $image_type = exif_imagetype($filename);
-    switch ($image_type) {
-        case IMAGETYPE_GIF:
-            return "gif";
-            break;
-        case IMAGETYPE_JPEG:
-            return "jpg";
-            break;
-        case IMAGETYPE_PNG:
-            return "png";
-            break;    
-        default:
+    $types = '.jpeg|.png|.gif';
+    if(file_exists($filename)){
+        $info = getimagesize($filename);
+        $ext = image_type_to_extension($info[2]);
+        if(stripos($types,$ext)>=0){
+            return $ext;
+        }else{
             return false;
-            break;
+        }
+    }else{
+        return false;
     }
 }
 
@@ -30,7 +26,7 @@ if(isset($_POST['submit'])){
     if(!$res){
         $msg = "文件未知，上传失败！";
     }else{
-        $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").".".$res;
+        $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").$res;
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {

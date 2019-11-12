@@ -1,5 +1,5 @@
 <?php
 if($_GET['action'] == 'get_prompt'){
-    echo '需要代码审计！';
+    echo '本pass重新渲染了图片！';
 }
 ?>

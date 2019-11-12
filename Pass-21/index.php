@@ -4,40 +4,51 @@ include '../common.php';
 include '../head.php';
 include '../menu.php';
 
-$is_upload = false;
-$msg = null;
+
 if (isset($_POST['submit'])) {
     if (file_exists(UPLOAD_PATH)) {
-        $deny_ext = array("php","php5","php4","php3","php2","html","htm","phtml","pht","jsp","jspa","jspx","jsw","jsv","jspf","jtml","asp","aspx","asa","asax","ascx","ashx","asmx","cer","swf","htaccess");
 
-        /*
-        $file_name = trim($_POST['save_name']);
-        $file_name = deldot($file_name);//删除文件名末尾的点
-        $file_ext = pathinfo($file_name,PATHINFO_EXTENSION);
-        $file_ext = strtolower($file_ext); //转换为小写
-        $file_ext = str_ireplace('::$DATA', '', $file_ext);//去除字符串::$DATA
-        $file_ext = trim($file_ext); //首尾去空
-        */
-
-        $file_name = $_POST['save_name'];
-        $file_ext = pathinfo($file_name,PATHINFO_EXTENSION);
-
-        if(!in_array($file_ext,$deny_ext)) {
-            $temp_file = $_FILES['upload_file']['tmp_name'];
-            $img_path = UPLOAD_PATH . '/' .$file_name;
-            if (move_uploaded_file($temp_file, $img_path)) { 
-                $is_upload = true;
+        $is_upload = false;
+        $msg = null;
+        if(!empty($_FILES['upload_file'])){
+            //mime check
+            $allow_type = array('image/jpeg','image/png','image/gif');
+            if(!in_array($_FILES['upload_file']['type'],$allow_type)){
+                $msg = "禁止上传该类型文件!";
             }else{
-                $msg = '上传出错！';
+                //check filename
+                $file = empty($_POST['save_name']) ? $_FILES['upload_file']['name'] : $_POST['save_name'];
+                if (!is_array($file)) {
+                    $file = explode('.', strtolower($file));
+                }
+
+                $ext = end($file);
+                $allow_suffix = array('jpg','png','gif');
+                if (!in_array($ext, $allow_suffix)) {
+                    $msg = "禁止上传该后缀文件!";
+                }else{
+                    $file_name = reset($file) . '.' . $file[count($file) - 1];
+                    $temp_file = $_FILES['upload_file']['tmp_name'];
+                    $img_path = UPLOAD_PATH . '/' .$file_name;
+                    if (move_uploaded_file($temp_file, $img_path)) {
+                        $msg = "文件上传成功！";
+                        $is_upload = true;
+                    } else {
+                        $msg = "文件上传失败！";
+                    }
+                }
             }
         }else{
-            $msg = '禁止保存为该类型文件！';
+            $msg = "请选择要上传的文件！";
         }
-
+        
     } else {
         $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
     }
 }
+
+
+
 ?>
 
 <div id="upload_panel">
@@ -52,7 +63,7 @@ if (isset($_POST['submit'])) {
                 <p>请选择要上传的图片：<p>
                 <input class="input_file" type="file" name="upload_file"/>
                 <p>保存名称:<p>
-                <input class="input_text" type="text" name="save_name" value="upload-19.jpg" /><br/>
+                <input class="input_text" type="text" name="save_name" value="upload-20.jpg" /><br/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>
             <div id="msg">

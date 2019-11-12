@@ -10,14 +10,14 @@ if(isset($_POST['submit'])){
     $file_ext = substr($_FILES['upload_file']['name'],strrpos($_FILES['upload_file']['name'],".")+1);
     if(in_array($file_ext,$ext_arr)){
         $temp_file = $_FILES['upload_file']['tmp_name'];
-        $img_path = $_POST['save_path']."/".rand(10, 99).date("YmdHis").".".$file_ext;
+        $img_path = $_GET['save_path']."/".rand(10, 99).date("YmdHis").".".$file_ext;
 
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = "上传失败";
+            $msg = '上传出错！';
         }
-    } else {
+    } else{
         $msg = "只允许上传.jpg|.png|.gif类型文件！";
     }
 }
@@ -31,9 +31,8 @@ if(isset($_POST['submit'])){
         </li>
         <li>
             <h3>上传区</h3>
-            <form enctype="multipart/form-data" method="post">
+            <form action="?save_path=../upload/" enctype="multipart/form-data" method="post">
                 <p>请选择要上传的图片：<p>
-                <input type="hidden" name="save_path" value="../upload/"/>
                 <input class="input_file" type="file" name="upload_file"/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>

@@ -142,7 +142,7 @@ class MyUpload{
   **/
   function move(){
     
-    if( move_uploaded_file( $this->cls_tmp_filename, $this->cls_upload_dir . $this->cls_filename ) == false ){
+    if( move_uploaded_file( $this->cls_tmp_filename, $this->cls_upload_dir ."/". $this->cls_filename ) == false ){
       return "MOVE_UPLOADED_FILE_FAILURE";
     } else {
       return 1;
@@ -192,7 +192,7 @@ class MyUpload{
     $extension = strrchr( $this->cls_filename, "." );
     $this->cls_file_rename_to .= $extension;
     
-    if( !rename( $this->cls_upload_dir . $this->cls_filename, $this->cls_upload_dir . $this->cls_file_rename_to )){
+    if( !rename( $this->cls_upload_dir ."/". $this->cls_filename, $this->cls_upload_dir ."/". $this->cls_file_rename_to )){
       return "RENAME_FAILURE";
     } else {
       return 1;

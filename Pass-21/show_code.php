@@ -7,7 +7,7 @@ if(!empty($_FILES['upload_file'])){
     //检查MIME
     $allow_type = array('image/jpeg','image/png','image/gif');
     if(!in_array($_FILES['upload_file']['type'],$allow_type)){
-        $msg = "禁止上传该 type file!";
+        $msg = "Do not upload the type file!";
     }else{
         //检查文件名
         $file = empty($_POST['save_name']) ? $_FILES['upload_file']['name'] : $_POST['save_name'];

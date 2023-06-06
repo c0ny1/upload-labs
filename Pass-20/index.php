@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
                 <input class="input_file" type="file" name="upload_file"/>
                 <p>Save name:<p>
                 <input class="input_text" type="text" name="save_name" value="upload-19.jpg" /><br/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 

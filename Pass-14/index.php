@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
             <form enctype="multipart/form-data" method="post">
                 <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 

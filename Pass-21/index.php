@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
             //mime check
             $allow_type = array('image/jpeg','image/png','image/gif');
             if(!in_array($_FILES['upload_file']['type'],$allow_type)){
-                $msg = "禁止上传该 type file!";
+                $msg = "Do not upload the type file!";
             }else{
                 //check filename
                 $file = empty($_POST['save_name']) ? $_FILES['upload_file']['name'] : $_POST['save_name'];
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
                 <input class="input_file" type="file" name="upload_file"/>
                 <p>Save name:<p>
                 <input class="input_text" type="text" name="save_name" value="upload-20.jpg" /><br/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 

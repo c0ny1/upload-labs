@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 # install upload-labs
 RUN cd /tmp/ && \
-    https://github.com/namhikelo/upload-labs.git && \
+    git clone https://github.com/namhikelo/upload-labs.git && \
     rm -rf /var/www/html/* && \
     mv /tmp/upload-labs/* /var/www/html/ && \
     chown www-data:www-data -R /var/www/html/ && \

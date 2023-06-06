@@ -1,6 +1,5 @@
 FROM php:7.4-apache
 
-MAINTAINER c0ny1 <root@gv7.me>
 ENV LC_ALL C.UTF-8
 ENV TZ=Asia/Shanghai
 

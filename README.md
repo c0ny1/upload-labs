@@ -16,9 +16,9 @@
 
 ```
 git clone https://github.com/namhikelo/upload-labs.git
-$ cd upload-labs/docker
-$ docker build -t upload-labs .
-$  docker run -d -p 80:80 upload-labs:latest
+cd upload-labs/docker
+docker build -t upload-labs .
+docker run -d -p 80:80 upload-labs:latest
 ```
 
 ## 

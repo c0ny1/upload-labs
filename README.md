@@ -29,9 +29,8 @@ $  docker run -d -p 80:80 upload-labs:latest
 
 #### 3.1 Máy mục tiêu chứa phân loại loại lỗ hổng
 
-![Tải lên phân loại lỗ hổng](doc/mind-map.png)
+![Tải lên phân loại lỗ hổng](doc/mindmap.png)
 
 #### 3.2 Làm cách nào để xác định loại lỗ hổng tải lên?
 
-![Xác định loại lỗ hổng tải lên](doc/sum_up.png)
-
+![Xác định loại lỗ hổng tải lên](doc/sumup.png)

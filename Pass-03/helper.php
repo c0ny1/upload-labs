@@ -1,7 +1,7 @@
 <?php
 
 if($_GET['action'] == 'get_prompt'){
-    echo '本pass禁止上传.asp|.aspx|.php|.jsp后缀文件！';
+    echo 'This pass prohibits uploading.asp|.aspx|.php|.jsp后缀文件！';
 }
 
 ?>

@@ -39,11 +39,11 @@ if (isset($_POST['submit'])) {
                 }
             }
         }else{
-            $msg = "请选择要上传的文件！";
+            $msg = "Please select a file to upload！";
         }
         
     } else {
-        $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH . 'The folder does not exist, please create it manually!';
     }
 }
 
@@ -54,13 +54,13 @@ if (isset($_POST['submit'])) {
 <div id="upload_panel">
     <ol>
         <li>
-            <h3>任务</h3>
-            <p>上传一个<code>webshell</code>到服务器。</p>
+            <h3>Task</h3>
+            <p>Upload<code>webshell</code>to server.</p>
         </li>
         <li>
-            <h3>上传区</h3>
+            <h3>Upload area</h3>
             <form enctype="multipart/form-data" method="post">
-                <p>请选择要上传的图片：<p>
+                <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
                 <p>保存名称:<p>
                 <input class="input_text" type="text" name="save_name" value="upload-20.jpg" /><br/>
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
             <div id="msg">
                 <?php 
                     if($msg != null){
-                        echo "提示：".$msg;
+                        echo "hint:".$msg;
                     }
                 ?>
             </div>

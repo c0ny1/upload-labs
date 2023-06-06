@@ -10,9 +10,9 @@
 	<div id="head">
 		<a href="<?php echo APP_URL_ROOT;?>/"><img src="<?php echo APP_URL_ROOT;?>/img/logo.png"/></a>
 		<div id="head_menu">
-			<a id="handle_code" href="javascript:show_code()">显示源码</a>
-			<a href="javascript:get_prompt()">查看提示</a>
-			<a href="javascript:clean_upload_file()">清空上传文件</a>
+			<a id="handle_code" href="javascript:show_code()">show source code</a>
+			<a href="javascript:get_prompt()">view tips</a>
+			<a href="javascript:clean_upload_file()">Clear uploaded files</a>
 		</div>
 	</div>
 	<div id="main">

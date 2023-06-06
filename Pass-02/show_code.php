@@ -11,13 +11,13 @@ if (isset($_POST['submit'])) {
             if (move_uploaded_file($temp_file, $img_path)) {
                 $is_upload = true;
             } else {
-                $msg = '上传出错！';
+                $msg = 'Upload error!';
             }
         } else {
             $msg = '文件类型不正确，请重新上传！';
         }
     } else {
-        $msg = UPLOAD_PATH.'文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH.'The folder does not exist, please create it manually!';
     }
 }
 </code>

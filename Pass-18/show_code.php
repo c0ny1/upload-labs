@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
             unlink($upload_file);
         }
     }else{
-        $msg = '上传出错！';
+        $msg = 'Upload error!';
     }
 }
 </code>

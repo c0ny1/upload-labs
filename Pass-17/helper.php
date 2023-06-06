@@ -1,5 +1,5 @@
 <?php
-if($_GET['action'] == 'get_prompt'){
-    echo '本pass重新渲染了图片！';
+if ($_GET['action'] == 'get_prompt') {
+    echo 'This pass has re-rendered the image!';
 }
 ?>

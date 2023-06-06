@@ -32,7 +32,7 @@ if(!empty($_FILES['upload_file'])){
         }
     }
 }else{
-    $msg = "请选择要上传的文件！";
+    $msg = "Please select a file to upload！";
 }
 </code>
 </pre>

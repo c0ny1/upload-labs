@@ -25,7 +25,7 @@ if (isset($_POST['submit']))
             $msg = '上传失败，上传目录不可写。';
             break; 
         case -3:
-            $msg = '上传失败，无法上传该类型文件。';
+            $msg = '上传失败，无法上传该 type file。';
             break; 
         case -4:
             $msg = '上传失败，上传的文件过大。';

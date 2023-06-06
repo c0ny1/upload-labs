@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
             $im = imagecreatefromjpeg($target_path);
 
             if($im == false){
-                $msg = "该文件不是jpg格式的图片！";
+                $msg = "The file is not a picture in jpg format!";
                 @unlink($target_path);
             }else{
                 //给新图片指定文件名
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])){
             $im = imagecreatefrompng($target_path);
 
             if($im == false){
-                $msg = "该文件不是png格式的图片！";
+                $msg = "The file is not a picture in png format！";
                 @unlink($target_path);
             }else{
                  //给新图片指定文件名
@@ -67,7 +67,7 @@ if (isset($_POST['submit'])){
             //使用上传的图片生成新的图片
             $im = imagecreatefromgif($target_path);
             if($im == false){
-                $msg = "该文件不是gif格式的图片！";
+                $msg = "This file is not a picture in gif format!";
                 @unlink($target_path);
             }else{
                 //给新图片指定文件名
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])){
             $msg = "Upload error!";
         }
     }else{
-        $msg = "只允许上传后缀为.jpg|.png|.gif的图片文件！";
+        $msg = "Only uploads with a suffix of.jpg|.png|.gif的图片文件！";
     }
 }
 ?>

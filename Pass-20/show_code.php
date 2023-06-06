@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
                 $msg = 'Upload error!';
             }
         }else{
-            $msg = '禁止保存为该类型文件！';
+            $msg = '禁止保存为该 type file！';
         }
 
     } else {

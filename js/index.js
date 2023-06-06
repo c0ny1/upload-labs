@@ -22,9 +22,9 @@ function modify_showcode_name(){
 	var url = window.location.href;
 	var btn_showcode = document.getElementById("handle_code");
 	if(url.indexOf('show_code') >= 0){
-		btn_showcode.innerHTML = "隐藏源码";
+		btn_showcode.innerHTML = "hidden source code";
 	}else{
-		btn_showcode.innerHTML = "显示源码";
+		btn_showcode.innerHTML = "show source code";
 	}
 }
 
@@ -35,7 +35,7 @@ function get_prompt(){
 	}).success(function(data) {
 		Dialog.open(400,200,data);
 	}).error(function() {  
-		Dialog.open(400,150,"获取提示失败！");
+		Dialog.open(400,150,"Failed to get tips!");
 	});
 }
 
@@ -46,7 +46,7 @@ function clean_upload_file(){
 	}).success(function(data) {
 		Dialog.open(400,200,data);
 	}).error(function() {
-		Dialog.open(400,150,"删除失败！");
+		Dialog.open(400,150,"failed to delete!");
 	}); 
 }
 

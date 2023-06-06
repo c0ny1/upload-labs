@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
     $temp_file = $_FILES['upload_file']['tmp_name'];
     $res = isImage($temp_file);
     if(!$res){
-        $msg = "文件未知，上传失败！";
+        $msg = "Unknown file, Upload failed!";
     }else{
         $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").".".$res;
         if(move_uploaded_file($temp_file,$img_path)){

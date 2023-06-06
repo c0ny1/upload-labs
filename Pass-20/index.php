@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
                 $msg = 'Upload error!';
             }
         }else{
-            $msg = '禁止保存为该类型文件！';
+            $msg = 'It is forbidden to save as this type of file!';
         }
 
     } else {
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
             <form enctype="multipart/form-data" method="post">
                 <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <p>保存名称:<p>
+                <p>Save name:<p>
                 <input class="input_text" type="text" name="save_name" value="upload-19.jpg" /><br/>
                 <input class="button" type="submit" name="submit" value="上传"/>
             </form>

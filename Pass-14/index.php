@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
     $file_type = getReailFileType($temp_file);
 
     if($file_type == 'unknown'){
-        $msg = "文件未知，上传失败！";
+        $msg = "Unknown file, Upload failed!";
     }else{
         $img_path = UPLOAD_PATH."/".rand(10, 99).date("YmdHis").".".$file_type;
         if(move_uploaded_file($temp_file,$img_path)){

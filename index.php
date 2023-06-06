@@ -13,19 +13,19 @@ include 'menu.php';
     <ol>
         <li>
             <h3>Introduction</h3>
-            <p><code>upload-labs</code>is a use<code>php</code>语言编写的，专门收集渗透测试和CTF中遇到的各种上传漏洞的靶场。旨在帮助大家对上传漏洞有一个全面的了解。目前一共21关，每一关都包含着不同上传方式。</p>
+            <p><code>upload-labs</code> is a vulnerable web application written in PHP, specifically designed to collect various types of file upload vulnerabilities encountered in penetration testing and CTF challenges. Its purpose is to provide a comprehensive understanding of file upload vulnerabilities. Currently, there are a total of 21 levels, each of which includes different upload methods.</p>
         </li>
         <li>
-            <h3>注意</h3>
-            <p>1.每一关没有固定的通关方法，大家不要自限思维！</p>
-            <p>2.本项目提供的<code>writeup</code>只是起一个参考作用，希望大家可以分享出自己的通关思路。</p>
-            <p>3.实在没有思路时，可以点击<code>查看提示</code>。</p>
-            <p>4.如果黑盒情况下，实在做不出，可以点击<code>查看源码</code>。</p>
+            <h3>Notes</h3>
+            <p>1. There is no fixed method to complete each level, so do not limit your thinking!</p>
+            <p>2. The provided writeups are only for reference. It is encouraged to share your own approaches to solve the challenges.</p>
+            <p>3. If you are stuck and need hints, you can click on "View Hints".</p>
+            <p>4. If you are unable to solve a level even after using the hints, you can click on "View Source Code" (in black box scenarios).</p>
         </li>
         <li>
-            <h3>后续</h3>
-            <p>If a new type of uploaded vulnerability is encountered in the actual penetration test, it will be updated to<code>upload-labs</code>middle. Of course, if you also want to participate in this work, welcome<code>pull requests</code>Give me!</p>
-            <p>项目地址：<code>https://github.com/c0ny1/upload-labs</code></p>
+            <h3>Future Updates</h3>
+            <p>If a new type of file upload vulnerability is encountered during actual penetration testing, it will be added to the upload-labs. If you would like to contribute to this project, you are welcome to submit pull requests.</p>
+            <p>Project Repository: <code>https://github.com/c0ny1/upload-labs</code></p>
         </li>
 	</ol>
 </div>

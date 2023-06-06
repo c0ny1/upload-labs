@@ -15,10 +15,10 @@ if(isset($_POST['submit'])){
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = "上传失败";
+            $msg = "Upload failed";
         }
     } else {
-        $msg = "只允许上传.jpg|.png|.gif类型文件！";
+        $msg = "Upload only.jpg|.png|.gif type file!";
     }
 }
 ?>

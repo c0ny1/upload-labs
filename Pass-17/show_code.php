@@ -82,7 +82,7 @@ if (isset($_POST['submit'])){
             $msg = "Upload error!";
         }
     }else{
-        $msg = "只允许上传后缀为.jpg|.png|.gif的图片文件！";
+        $msg = "Upload only后缀为.jpg|.png|.gif的图片文件！";
     }
 }
 </code>

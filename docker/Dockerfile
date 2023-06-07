@@ -1,7 +1,7 @@
 FROM php:7.4-apache
 
 ENV LC_ALL C.UTF-8
-ENV TZ=Asia/Shanghai
+ENV TZ Asia/Ho_Chi_Minh
 
 COPY . /tmp/
 

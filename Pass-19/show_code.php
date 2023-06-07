@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>index.php代码</h3>
+    <h3>index.phpCode</h3>
 <pre>
 <code class="line-numbers language-php">//index.php
 $is_upload = false;

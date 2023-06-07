@@ -36,7 +36,7 @@ pre[class*="language-"],
 /* Code blocks */
 pre[class*="language-"] {
 	border-radius: .5em;
-	border: .3em solid hsl(0, 0%, 33%); /* #282A2B */
+	border: .3em solid hsl(147.29deg 100% 50%); /* #282A2B */
 	box-shadow: 1px 1px .5em black inset;
 	margin: .5em 0;
 	overflow: auto;

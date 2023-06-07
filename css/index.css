@@ -103,14 +103,14 @@ p code {
 }
 
 #menu ul li a{
-	color: #FDA162;
+	color: #00ffc6;
 	text-decoration: none;
 	font-size: 16px;
 	padding: 5 30 5 30;
 }
 
 #menu ul li a:hover{
-	color: #E05D04;
+	color: #ff2215;
 	background: #252525;
 	-webkit-border-radius:5px;
 }

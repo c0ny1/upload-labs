@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>代码</h3>
+    <h3>Code</h3>
 <pre>
 <code class="line-numbers language-php">function getReailFileType($filename){
     $file = fopen($filename, "rb");

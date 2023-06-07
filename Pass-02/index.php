@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
                 $msg = 'Upload error!';
             }
         } else {
-            $msg = '文件类型不正确，请重新上传！';
+            $msg = 'The file type is incorrect, please upload again!';
         }
     } else {
         $msg = UPLOAD_PATH.'The folder does not exist, please create it manually!';

@@ -59,11 +59,6 @@ WantedBy=multi-user.target
 ```
 
 ```
-sudo service ssh restart
-sudo systemctl restart ssh
-```
-
-```
 sudo systemctl enable upload-labs.service
 sudo systemctl start upload-labs.service
 ```

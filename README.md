@@ -12,13 +12,30 @@
 
 **upload-labs is a vulnerable web application written in PHP that focuses on collecting various types of file upload vulnerabilities encountered in penetration testing and Capture The Flag (CTF) challenges. Its purpose is to help users gain a comprehensive understanding of file upload vulnerabilities. There are currently 20 levels in upload-labs, with each level showcasing different upload methods and scenarios.**
 
+## Requirement
+
+### Download Docker
+
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-ce
+```
+
+### Download Docker Compose
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
 ## Build in linux 
 
 ```
 git clone https://github.com/namhikelo/upload-labs.git
 cd upload-labs/docker
-docker build -t upload-labs .
-docker run -d -p 80:80 upload-labs:latest
+./run.sh
 ```
 
 ## Tự động chạy docker sau khi khởi động lại 

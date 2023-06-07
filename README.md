@@ -21,7 +21,30 @@ docker build -t upload-labs .
 docker run -d -p 80:80 upload-labs:latest
 ```
 
-## 
+## Tự động chạy docker sau khi khởi động lại 
+```
+sudo nano /etc/systemd/system/upload-labs.service
+```
+
+```
+[Unit]
+Description=Upload Labs Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker run -d -p 80:80 upload-labs:latest
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl enable upload-labs.service
+sudo systemctl start upload-labs.service
+```
 
 ## 0x03 Summary
 

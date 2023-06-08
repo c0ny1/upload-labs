@@ -10,8 +10,8 @@ if (isset($_POST['submit'])) {
     if (file_exists(UPLOAD_PATH)) {
         $temp_file = $_FILES['upload_file']['tmp_name'];
         $img_path = UPLOAD_PATH . '/' . $_FILES['upload_file']['name'];
-        var_dump($temp_file);
         if (move_uploaded_file($temp_file, $img_path)){
+            var_dump($img_path);
             $is_upload = true;
         } else {
             $msg = 'Upload error!';

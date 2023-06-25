@@ -20,6 +20,7 @@ if(isset($_POST['submit'])){
     } else {
         $msg = "Upload only.jpg|.png|.gif type file!";
     }
+    $msg = $msg . '<br>' . 'Filename: ' . $file_name . ' | File extension: ' . $file_ext;
 }
 ?>
 

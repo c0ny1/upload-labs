@@ -30,8 +30,8 @@ if (isset($_POST['submit'])) {
     } else {
         $msg = UPLOAD_PATH . 'The folder does not exist, please create it manually!';
     }
+    $msg = $msg . '<br>' . 'Filename: ' . $file_name . ' | File extension: ' . $file_ext;
 }
-$msg = $msg . '\n' . 'Filename: ' . $file_name . ' | File extension: ' . $file_ext;
 ?>
 
 <div id="upload_panel">

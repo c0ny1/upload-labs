@@ -26,13 +26,13 @@ function del_dir($dir){
 		}else{
 			$n_fail++;
 		}
-		return '删除成功：'.$n_success.'，删除失败：'.$n_fail.'！';
+		return 'successfully deleted：'.$n_success.'，failed to delete：'.$n_fail.'！';
 	}
 }
 
 function touch_upload_readme(){
 	$filepath = './upload/readme.php';
-	file_put_contents($filepath,"<?php echo \"该目录是上传文件保存，该文件为系统说明文件，请勿删除！\";?>");
+	file_put_contents($filepath,"<?php echo \"This directory is to save uploaded files. This file is a system description file, please do not delete it！\";?>");
 }
 
 if($_GET['action'] == 'clean_upload_file'){

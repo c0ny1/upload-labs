@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>index.php代码</h3>
+    <h3>index.phpCode</h3>
 <pre>
 <code class="line-numbers language-php">$is_upload = false;
 $msg = null;
@@ -17,11 +17,11 @@ if(isset($_POST['submit'])){
              rename($upload_file, $img_path);
              $is_upload = true;
         }else{
-            $msg = "只允许上传.jpg|.png|.gif类型文件！";
+            $msg = "Upload only.jpg|.png|.gif type file！";
             unlink($upload_file);
         }
     }else{
-        $msg = '上传出错！';
+        $msg = 'Upload error!';
     }
 }
 </code>

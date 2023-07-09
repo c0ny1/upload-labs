@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>代码</h3>
+    <h3>Code</h3>
 <pre>
 <code class="line-numbers language-php">$is_upload = false;
 $msg = null;
@@ -13,10 +13,10 @@ if(isset($_POST['submit'])){
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = '上传出错！';
+            $msg = 'Upload error!';
         }
     } else{
-        $msg = "只允许上传.jpg|.png|.gif类型文件！";
+        $msg = "Upload only.jpg|.png|.gif type file！";
     }
 }
 </code>

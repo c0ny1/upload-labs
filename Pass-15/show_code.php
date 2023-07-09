@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>代码</h3>
+    <h3>Code</h3>
 <pre>
 <code class="line-numbers language-php">function isImage($filename){
     $types = '.jpeg|.png|.gif';
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
         if(move_uploaded_file($temp_file,$img_path)){
             $is_upload = true;
         } else {
-            $msg = "上传出错！";
+            $msg = "Upload error!";
         }
     }
 }

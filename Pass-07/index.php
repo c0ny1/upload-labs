@@ -21,34 +21,35 @@ if (isset($_POST['submit'])) {
             if (move_uploaded_file($temp_file,$img_path)) {
                 $is_upload = true;
             } else {
-                $msg = '上传出错！';
+                $msg = 'Upload error!';
             }
         } else {
-            $msg = '此文件不允许上传';
+            $msg = 'This file is not allowed to upload';
         }
     } else {
-        $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH . 'The folder does not exist, please create it manually!';
     }
+    $msg = $msg . '<br>' . 'Filename: ' . $file_name . ' | File extension: ' . $file_ext;
 }
 ?>
 
 <div id="upload_panel">
     <ol>
         <li>
-            <h3>任务</h3>
-            <p>上传一个<code>webshell</code>到服务器。</p>
+            <h3>Task</h3>
+            <p>Upload<code>webshell</code>to server.</p>
         </li>
         <li>
-            <h3>上传区</h3>
+            <h3>Upload area</h3>
             <form enctype="multipart/form-data" method="post" onsubmit="return checkFile()">
-                <p>请选择要上传的图片：<p>
+                <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 
                     if($msg != null){
-                        echo "提示：".$msg;
+                        echo "hint:".$msg;
                     }
                 ?>
             </div>

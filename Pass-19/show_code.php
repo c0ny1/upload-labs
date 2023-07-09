@@ -1,5 +1,5 @@
 <li id="show_code">
-    <h3>index.php代码</h3>
+    <h3>index.phpCode</h3>
 <pre>
 <code class="line-numbers language-php">//index.php
 $is_upload = false;
@@ -25,7 +25,7 @@ if (isset($_POST['submit']))
             $msg = '上传失败，上传目录不可写。';
             break; 
         case -3:
-            $msg = '上传失败，无法上传该类型文件。';
+            $msg = '上传失败，无法上传该 type file。';
             break; 
         case -4:
             $msg = '上传失败，上传的文件过大。';

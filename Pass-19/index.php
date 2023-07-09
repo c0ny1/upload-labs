@@ -17,28 +17,28 @@ if (isset($_POST['submit']))
             $img_path = $u->cls_upload_dir . $u->cls_file_rename_to;
             break;
         case 2:
-            $msg = '文件已经被上传，但没有重命名。';
+            $msg = 'The file has been uploaded, but not renamed.';
             break; 
         case -1:
-            $msg = '这个文件不能上传到服务器的临时文件存储目录。';
+            $msg = 'This file cannot be uploaded to the temporary storage directory on the server.';
             break; 
         case -2:
-            $msg = '上传失败，上传目录不可写。';
+            $msg = 'Upload failed. The upload directory is not writable.';
             break; 
         case -3:
-            $msg = '上传失败，无法上传该类型文件。';
+            $msg = 'Upload failed. The file type is not allowed.';
             break; 
         case -4:
-            $msg = '上传失败，上传的文件过大。';
+            $msg = 'Upload failed. The file size is too large.';
             break; 
         case -5:
-            $msg = '上传失败，服务器已经存在相同名称文件。';
+            $msg = 'Upload failed. A file with the same name already exists on the server.';
             break; 
         case -6:
-            $msg = '文件无法上传，文件不能复制到目标目录。';
+            $msg = 'The file cannot be uploaded. Unable to copy the file to the target directory.';
             break;      
         default:
-            $msg = '未知错误！';
+        $msg = 'Unknown error!';
             break;
     }
 }
@@ -47,20 +47,20 @@ if (isset($_POST['submit']))
 <div id="upload_panel">
     <ol>
         <li>
-            <h3>任务</h3>
-            <p>上传一个<code>webshell</code>到服务器。</p>
+            <h3>Task</h3>
+            <p>Upload<code>webshell</code>to server.</p>
         </li>
         <li>
             <h3>上传区</h3>
             <form enctype="multipart/form-data" method="post">
-                <p>请选择要上传的图片：<p>
+                <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 
                     if($msg != null){
-                        echo "提示：".$msg;
+                        echo "hint:".$msg;
                     }
                 ?>
             </div>

@@ -19,11 +19,11 @@ if(isset($_POST['submit'])){
              rename($upload_file, $img_path);
              $is_upload = true;
         }else{
-            $msg = "只允许上传.jpg|.png|.gif类型文件！";
+            $msg = "Upload only.jpg|.png|.gif type file！";
             unlink($upload_file);
         }
     }else{
-        $msg = '上传出错！';
+        $msg = 'Upload error!';
     }
 }
 ?>
@@ -31,20 +31,20 @@ if(isset($_POST['submit'])){
 <div id="upload_panel">
     <ol>
         <li>
-            <h3>任务</h3>
-            <p>上传一个<code>webshell</code>到服务器。</p>
+            <h3>Task</h3>
+            <p>Upload<code>webshell</code>to server.</p>
         </li>
         <li>
-            <h3>上传区</h3>
+            <h3>Upload area</h3>
             <form enctype="multipart/form-data" method="post">
-                <p>请选择要上传的图片：<p>
+                <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 
                     if($msg != null){
-                        echo "提示：".$msg;
+                        echo "hint:".$msg;
                     }
                 ?>
             </div>

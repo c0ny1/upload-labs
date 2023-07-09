@@ -1,5 +1,5 @@
 <?php
 if($_GET['action'] == 'get_prompt'){
-    echo '上传目录存在php文件（readme.php）';
+    echo 'There are php files in the upload directory（readme.php）';
 }
 ?>

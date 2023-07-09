@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
             //mime check
             $allow_type = array('image/jpeg','image/png','image/gif');
             if(!in_array($_FILES['upload_file']['type'],$allow_type)){
-                $msg = "禁止上传该类型文件!";
+                $msg = "Do not upload the type file!";
             }else{
                 //check filename
                 $file = empty($_POST['save_name']) ? $_FILES['upload_file']['name'] : $_POST['save_name'];
@@ -25,25 +25,25 @@ if (isset($_POST['submit'])) {
                 $ext = end($file);
                 $allow_suffix = array('jpg','png','gif');
                 if (!in_array($ext, $allow_suffix)) {
-                    $msg = "禁止上传该后缀文件!";
+                    $msg = "It is forbidden to upload the suffix file!";
                 }else{
                     $file_name = reset($file) . '.' . $file[count($file) - 1];
                     $temp_file = $_FILES['upload_file']['tmp_name'];
                     $img_path = UPLOAD_PATH . '/' .$file_name;
                     if (move_uploaded_file($temp_file, $img_path)) {
-                        $msg = "文件上传成功！";
+                        $msg = "File uploaded successfully!";
                         $is_upload = true;
                     } else {
-                        $msg = "文件上传失败！";
+                        $msg = "File Upload failed!";
                     }
                 }
             }
         }else{
-            $msg = "请选择要上传的文件！";
+            $msg = "Please select a file to upload！";
         }
         
     } else {
-        $msg = UPLOAD_PATH . '文件夹不存在,请手工创建！';
+        $msg = UPLOAD_PATH . 'The folder does not exist, please create it manually!';
     }
 }
 
@@ -54,22 +54,22 @@ if (isset($_POST['submit'])) {
 <div id="upload_panel">
     <ol>
         <li>
-            <h3>任务</h3>
-            <p>上传一个<code>webshell</code>到服务器。</p>
+            <h3>Task</h3>
+            <p>Upload<code>webshell</code>to server.</p>
         </li>
         <li>
-            <h3>上传区</h3>
+            <h3>Upload area</h3>
             <form enctype="multipart/form-data" method="post">
-                <p>请选择要上传的图片：<p>
+                <p>Please select an image to upload:<p>
                 <input class="input_file" type="file" name="upload_file"/>
-                <p>保存名称:<p>
+                <p>Save name:<p>
                 <input class="input_text" type="text" name="save_name" value="upload-20.jpg" /><br/>
-                <input class="button" type="submit" name="submit" value="上传"/>
+                <input class="button" type="submit" name="submit" value="Upload"/>
             </form>
             <div id="msg">
                 <?php 
                     if($msg != null){
-                        echo "提示：".$msg;
+                        echo "hint:".$msg;
                     }
                 ?>
             </div>

@@ -8,7 +8,7 @@ body{
 	margin: 0 0 0 0;
 	min-width: 1340px;/*防止窗口变小导致页面变形*/
 	background: #333333;
-	font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", 微软雅黑, sans-serif;
+	font-family: "Times New Roman", Times, serif;
 }
 
 #head{
@@ -23,7 +23,7 @@ body{
 	margin: 10px 10px 10px 10px;
 	padding: 8px;
 	-webkit-border-radius:5px;
-	font-family:  黑体;
+	font-family:  "Times New Roman";
 	color: #333333;
 	text-decoration: none;
 	font-size: 13px;
@@ -46,7 +46,7 @@ ol{
 }
 
 ol li h3{
-	font-family:"Arista2",helvetica,sans-serif;
+	font-family:"Times New Roman", Times, serif;
 	color: #E05D04;
 	font-size: 18px;
 }
@@ -103,14 +103,14 @@ p code {
 }
 
 #menu ul li a{
-	color: #FDA162;
+	color: #00ffc6;
 	text-decoration: none;
 	font-size: 16px;
 	padding: 5 30 5 30;
 }
 
 #menu ul li a:hover{
-	color: #E05D04;
+	color: #ff2215;
 	background: #252525;
 	-webkit-border-radius:5px;
 }
@@ -168,7 +168,7 @@ p code {
 	margin: 10px;
 	padding: 4px;
 	-webkit-border-radius:5px;
-	font-family:黑体;
+	font-family:"Times New Roman";
 	border:0px;
 }
 #msg{
